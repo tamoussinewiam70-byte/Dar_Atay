@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dar Atay – Salon de thé traditionnel à Casablanca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+:root{
+  --green:#0d5a40; --green-d:#08382a; --red:#7c1d2a; --gold:#d6a336; --gold-d:#a87c1c;
+  --paper:#f6ecd3; --ink:#2b1a12; --muted:#6a5445; --card:#fffaf0; --line:#c9b27a;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#10231b;--ink:#f3e7c6;--muted:#c4b48b;--card:#18312a;--line:#5b5030;--red:#c4485a;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#10231b;--ink:#f3e7c6;--muted:#c4b48b;--card:#18312a;--line:#5b5030;--red:#c4485a;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.2rem/1.65 Amiri,Georgia,"Times New Roman",serif}
+h1,h2,h3{margin:0;font-weight:700;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+.zellige{background-color:var(--green);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='-22 -22 44 44'%3E%3Cg fill='none' stroke='%23d6a336' stroke-width='1.3'%3E%3Crect x='-13' y='-13' width='26' height='26'/%3E%3Crect x='-13' y='-13' width='26' height='26' transform='rotate(45)'/%3E%3C/g%3E%3Ccircle r='3.2' fill='%23d6a336'/%3E%3C/svg%3E")}
+.band{height:34px;border-block:4px double var(--gold)}
+
+/* HERO */
+.hero{padding:2rem 1.25rem 0;text-align:center;color:var(--paper)}
+.top{display:flex;justify-content:center;gap:2rem;margin-bottom:2rem;color:#f6ecd3}
+.top a{text-decoration:none;font-weight:700;letter-spacing:.04em}
+.arch{width:min(560px,100%);margin:0 auto;background:var(--paper);color:var(--ink);border-radius:280px 280px 0 0;
+  box-shadow:0 0 0 6px var(--green),0 0 0 10px var(--gold),0 0 0 14px var(--green);
+  padding:5.5rem 2rem 3rem;margin-bottom:14px}
+.ar{font-size:clamp(3rem,12vw,5rem);color:var(--red);line-height:1.2}
+.arch h1{font-size:clamp(1.6rem,6vw,2.4rem);letter-spacing:.18em;font-weight:400;margin:.2rem 0 1rem}
+.arch p{margin:0 auto 1.6rem;max-width:30ch;font-style:italic;color:var(--muted)}
+.btn{display:inline-block;background:var(--red);color:#fff7e6;border:2px solid var(--gold);border-radius:4px;padding:.7rem 1.8rem;font:700 1.1rem Amiri,Georgia,serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--green)}
+
+/* SECTIONS */
+section{padding:4rem 1.25rem}
+.in{max-width:760px;margin:0 auto}
+h2{text-align:center;font-size:clamp(2rem,6vw,2.8rem);color:var(--red);display:flex;align-items:center;gap:1rem;margin-bottom:.4rem}
+h2::before,h2::after{content:"";flex:1;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);height:6px}
+.sub{text-align:center;font-size:1.6rem;color:var(--gold-d);margin:0 0 1.8rem}
+.frame{background:var(--card);border:2px solid var(--gold);outline:2px solid var(--green);outline-offset:6px;padding:1.6rem 1.4rem;margin:8px}
+.tabs{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.tabs button{font:700 1.05rem Amiri,Georgia,serif;color:var(--ink);background:transparent;border:2px solid var(--gold);padding:.35rem 1.1rem;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--green);color:#f6ecd3;border-color:var(--green)}
+.menu{list-style:none;margin:0;padding:0}
+.menu li{padding:.7rem 0}
+.row{display:flex;align-items:baseline;gap:.5rem}
+.row b{font-size:1.35rem}
+.dots{flex:1;border-bottom:2px dotted var(--gold-d);transform:translateY(-.25rem)}
+.row em{font-style:normal;font-weight:700;color:var(--red);white-space:nowrap}
+.menu span{display:block;color:var(--muted);font-style:italic;font-size:1.05rem}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem}
+form{display:grid;gap:.9rem}
+label{display:grid;gap:.2rem;font-weight:700}
+input,select{padding:.6rem .7rem;border:2px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;border-radius:3px}
+#ok{margin:0;color:var(--green);font-weight:700;min-height:1.6em}
+:root[data-theme="dark"] #ok{color:var(--gold)}
+.side h3{color:var(--red);font-size:1.4rem}
+.side p{margin:0 0 1.2rem;color:var(--muted)}
+footer{text-align:center;color:#f6ecd3;padding-bottom:2rem}
+footer p{margin:1.2rem 0 0;padding:0 1rem}
+@media (max-width:720px){.cols{grid-template-columns:1fr}.arch{padding-top:4rem;border-radius:200px 200px 0 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="zellige hero" id="top">
+  <nav class="top"><a href="#menu">Carte</a><a href="#reserver">Réserver</a></nav>
+  <div class="arch">
+    <div class="ar" lang="ar" dir="rtl">دار أتاي</div>
+    <h1>DAR ATAY</h1>
+    <p>Salon de thé familial au cœur de Casablanca. La menthe, le sucre et le temps de s’asseoir.</p>
+    <a class="btn" href="#reserver">Réserver une table</a>
+  </div>
+</header>
+<div class="band zellige"></div>
+
+<section id="menu"><div class="in">
+  <h2>La Carte</h2>
+  <p class="sub" lang="ar" dir="rtl">القائمة</p>
+  <div class="frame">
+    <div class="tabs" role="group" aria-label="Catégories">
+      <button aria-pressed="true" data-cat="the">Thés</button>
+      <button aria-pressed="false" data-cat="manger">À manger</button>
+      <button aria-pressed="false" data-cat="douceurs">Douceurs</button>
+    </div>
+    <ul class="menu" id="list"></ul>
+  </div>
+</div></section>
+
+<div class="band zellige"></div>
+
+<section id="reserver"><div class="in">
+  <h2>Réservation</h2>
+  <p class="sub" lang="ar" dir="rtl">احجز طاولتك</p>
+  <div class="frame cols">
+    <form id="form">
+      <label>Nom <input name="nom" required autocomplete="name"></label>
+      <label>Date <input type="date" name="date" required></label>
+      <label>Personnes
+        <select name="n"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option></select>
+      </label>
+      <button class="btn" type="submit">Envoyer la demande</button>
+      <p id="ok" role="status"></p>
+    </form>
+    <div class="side">
+      <h3>Horaires</h3><p>Tous les jours, de 8h à 22h.<br>Le vendredi, dès 14h.</p>
+      <h3>Adresse</h3><p>12 rue des Habous,<br>Casablanca</p>
+      <h3>Groupes</h3><p>Au-delà de 6 personnes, écrivez-nous.</p>
+    </div>
+  </div>
+</div></section>
+
+<footer class="zellige">
+  <div class="band zellige" style="background-color:var(--green-d)"></div>
+  <p>Marhba bikoum · مرحبا بكم<br>© 2026 Dar Atay · bonjour@daratay.example</p>
+</footer>
+
+<script>
+var items = {
+  the: [["Atay bnaana","Théière pour deux, menthe fraîche","20 DH"],["Atay chiba","À l’absinthe, servi bien chaud","22 DH"],["Café noss noss","Moitié café, moitié lait","18 DH"]],
+  manger: [["Msemen & miel","Deux pièces, beurre et miel","25 DH"],["Harcha","Semoule dorée, fromage frais","22 DH"],["Baghrir","Mille trous, huile d’argan","28 DH"]],
+  douceurs: [["Cornes de gazelle","Amande et fleur d’oranger","30 DH"],["Chebakia","Sésame et miel","25 DH"],["Sellou","Amandes grillées et sésame","20 DH"]]
+};
+function show(cat){
+  document.getElementById("list").innerHTML = items[cat].map(function(i){
+    return '<li><div class="row"><b>'+i[0]+'</b><i class="dots"></i><em>'+i[2]+'</em></div><span>'+i[1]+'</span></li>';
+  }).join("");
+  document.querySelectorAll(".tabs button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.cat === cat ? "true" : "false"); });
+}
+document.querySelectorAll(".tabs button").forEach(function(b){ b.addEventListener("click", function(){ show(b.dataset.cat); }); });
+show("the");
+document.getElementById("form").addEventListener("submit", function(e){
+  e.preventDefault(); var f = e.target;
+  document.getElementById("ok").textContent = "Merci " + f.nom.value + ", demande reçue pour " + f.n.value + " personne(s) le " + f.date.value + ".";
+  f.reset();
+});
+</script>
+</body>
+</html>
